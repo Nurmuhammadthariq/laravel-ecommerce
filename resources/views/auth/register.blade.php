@@ -1,5 +1,9 @@
 @extends('layouts.auth')
 
+@section('title')
+    Sign Up Page
+@endsection
+
 @section('content')
 
 <div class="page-content page-auth" id="register">
