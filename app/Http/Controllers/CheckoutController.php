@@ -18,6 +18,7 @@ class CheckoutController extends Controller
     {
         // TODO: Save users data
         $user = Auth::user();
+        // dd($user->name);
         $user->update($request->except('total_price'));
 
         // Proses checkout
@@ -66,8 +67,8 @@ class CheckoutController extends Controller
                 'gross_amount' => (int) $request->total_price,
             ),
             'customer_details' => array(
-                'first_name'    => 'Galih Pratama',
-                'email'         => 'hanamura.iost@gmail.com'
+                'first_name'    => $user->name,
+                'email'         => $user->email
             ),
             'enabled_payments' => array('gopay','bank_transfer'),
             'vtweb' => array()
